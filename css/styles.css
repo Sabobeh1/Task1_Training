@@ -1,3 +1,9 @@
+:root {
+  --green: hsl(180, 62%, 55%);
+  --red: hsl(0, 78%, 62%);
+}
+
+
 body {
     font-family: "Poppins";
     margin: 0;
@@ -20,7 +26,7 @@ body {
   .page-header {
     text-align: center;
     padding: 20px;
-    height: 20vh;
+    /* height: 20vh; */
   }
   
   .page-header h1 {
@@ -72,18 +78,22 @@ body {
     width: 20vw;
     height: 20vh;
   }
+  .card.red-card {
+    border-top-color: var(--red);
+  }
   
   .card:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   }
   
-  .card img {
+  .card .card-icon {
     position: absolute;
     bottom: 15px;
     right: 15px;
     width: 50px;
     height: 50px;
   }
+
   
   .card-content {
     text-align: left;
@@ -103,9 +113,33 @@ body {
     height: 60%;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    /* white-space: nowrap;  */
   }
   
+
+
+
+  @media (max-width: 718px) {
+    .card-container {
+      flex-direction: column;
+      height: 100%;
+      margin: 20px 0px;
+    }
+  
+    .card .card-icon {
+      width: 40px;
+      height: 40px;
+    }
+    .card {
+      width: 60vw;
+      height: 20vh;
+    }
+  
+    /* .page-header{
+      height: 35vh;
+    } */
+  }
+
   @media (max-width: 375px) {
     .card-container {
       flex-direction: column;
@@ -113,10 +147,7 @@ body {
       margin: 20px 0px;
     }
   
-    .card img {
-      position: absolute;
-      bottom: 15px;
-      right: 15px;
+    .card .card-icon {
       width: 30px;
       height: 30px;
     }
@@ -125,9 +156,9 @@ body {
       height: 20vh;
     }
   
-    .page-header{
+    /* .page-header{
       height: 20vh;
-    }
+    } */
 
     .page-header h1 {
         font-size: 18px;
@@ -145,29 +176,4 @@ body {
         font-size: 15px;
         color: hsl(229, 6%, 66%);
       }
-  }
-
-
-  @media (max-width: 718px) {
-    .card-container {
-      flex-direction: column;
-      height: 100%;
-      margin: 20px 0px;
-    }
-  
-    .card img {
-      position: absolute;
-      bottom: 15px;
-      right: 15px;
-      width: 40px;
-      height: 40px;
-    }
-    .card {
-      width: 60vw;
-      height: 20vh;
-    }
-  
-    .page-header{
-      height: 35vh;
-    }
   }
